@@ -1,0 +1,91 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef2f7;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ---------- Card (desktop default) ---------- */
+.card {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #ffffff;
+  border: 2px solid #2563eb;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Header: avatar + name side by side */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #dbeafe;
+}
+.avatar {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 { margin: 0; font-size: 2.6rem; color: #2563eb; }
+.tagline { margin: 4px 0 0; color: #555; font-size: 1.15rem; }
+
+h2 { color: #1e3a8a; font-size: 1.5rem; margin: 28px 0 10px; }
+p { font-size: 1.05rem; }
+
+/* Skills: 4 columns on desktop */
+.skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.skills li {
+  background: #dbeafe;
+  color: #1e3a8a;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+a { color: #2563eb; text-decoration: none; word-break: break-all; }
+a:hover { text-decoration: underline; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 768px) {
+  body { padding: 16px; }
+  .card { margin: 20px auto; padding: 24px; }
+  h1 { font-size: 2rem; }
+  .avatar { width: 80px; height: 80px; font-size: 1.6rem; }
+  .skills { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  body { padding: 8px; }
+  .card { margin: 8px auto; padding: 16px; border-radius: 10px; }
+  .header { flex-direction: column; text-align: center; gap: 12px; }
+  h1 { font-size: 1.6rem; }
+  .tagline { font-size: 1rem; }
+  h2 { font-size: 1.25rem; }
+  p { font-size: 1rem; }
+  .skills { grid-template-columns: 1fr; }
+}
